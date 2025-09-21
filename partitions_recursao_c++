@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+
+int grid_comb(int n, int m)
+{
+    if(m == 1)
+    {
+        return -1;
+    }
+    else{
+        return n-m + grid_comb(n, m-1);
+    }
+}
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    cout << abs(grid_comb(n, m));
+}
