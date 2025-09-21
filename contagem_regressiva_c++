@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+void contagem_regressiva(int n)
+{
+    if(n == 1){
+        cout << n;
+        return;
+    }
+    else{
+        cout << n << " ";
+        contagem_regressiva(n-1);
+    }
+}
+
+int main()
+{
+    int n;
+    cin >> n;
+    contagem_regressiva(n);
+}
