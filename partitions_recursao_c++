@@ -3,18 +3,18 @@ using namespace std;
 
 int grid_comb(int n, int m)
 {
-    if(m == 1)
-    {
-        return -1;
-    }
-    else{
-        return n-m + grid_comb(n, m-1);
-    }
+    if(n == 0)
+        return 1;
+    else
+        if(m == 0 || n < 0)
+            return 0;
+        else
+            return grid_comb(n-m, m) + grid_comb(n, m-1);
 }
 
 int main()
 {
     int n, m;
     cin >> n >> m;
-    cout << abs(grid_comb(n, m));
+    cout << grid_comb(n, m);
 }
